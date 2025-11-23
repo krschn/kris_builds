@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<module fileurl="file://$PROJECT_DIR$/apps/barterhood/melos_barterhood.iml" filepath="$PROJECT_DIR$/apps/barterhood/melos_barterhood.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/core/melos_core.iml" filepath="$PROJECT_DIR$/packages/core/melos_core.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/utils/melos_utils.iml" filepath="$PROJECT_DIR$/packages/utils/melos_utils.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/widgets/melos_widgets.iml" filepath="$PROJECT_DIR$/packages/widgets/melos_widgets.iml"/>
+<module fileurl="file://$PROJECT_DIR$/melos_kris_builds.iml" filepath="$PROJECT_DIR$/melos_kris_builds.iml"/>
+    </modules>
+  </component>
+</project>
