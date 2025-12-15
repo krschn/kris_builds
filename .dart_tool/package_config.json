@@ -188,6 +188,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "fast_immutable_collections",
+      "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/fast_immutable_collections-11.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    },
+    {
       "name": "file",
       "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/file-7.0.1",
       "packageUri": "lib/",
@@ -224,6 +230,12 @@
       "languageVersion": "3.8"
     },
     {
+      "name": "fpdart",
+      "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/fpdart-1.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "freezed",
       "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/freezed-3.2.3",
       "packageUri": "lib/",
@@ -238,6 +250,12 @@
     {
       "name": "frontend_server_client",
       "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/frontend_server_client-4.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "get_it",
+      "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/get_it-9.2.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -276,6 +294,12 @@
       "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/http_parser-4.1.2",
       "packageUri": "lib/",
       "languageVersion": "3.4"
+    },
+    {
+      "name": "injectable",
+      "rootUri": "file:///Users/kris-mac/.pub-cache/hosted/pub.dev/injectable-2.7.1+2",
+      "packageUri": "lib/",
+      "languageVersion": "3.8"
     },
     {
       "name": "io",
@@ -604,6 +628,12 @@
     {
       "name": "barterhood",
       "rootUri": "../apps/barterhood",
+      "packageUri": "lib/",
+      "languageVersion": "3.10"
+    },
+    {
+      "name": "todo",
+      "rootUri": "../sandbox/todo",
       "packageUri": "lib/",
       "languageVersion": "3.10"
     },

@@ -3,6 +3,7 @@
     "barterhood",
     "core",
     "kris_builds",
+    "todo",
     "utils",
     "widgets"
   ],
@@ -25,6 +26,33 @@
         "flutter",
         "flutter_bloc",
         "freezed_annotation",
+        "json_annotation",
+        "retrofit"
+      ],
+      "devDependencies": [
+        "auto_route_generator",
+        "build_runner",
+        "flutter_lints",
+        "flutter_test",
+        "freezed",
+        "json_serializable",
+        "retrofit_generator"
+      ]
+    },
+    {
+      "name": "todo",
+      "version": "0.0.0",
+      "dependencies": [
+        "auto_route",
+        "bloc",
+        "dio",
+        "fast_immutable_collections",
+        "flutter",
+        "flutter_bloc",
+        "fpdart",
+        "freezed_annotation",
+        "get_it",
+        "injectable",
         "json_annotation",
         "retrofit"
       ],
@@ -338,6 +366,36 @@
         "meta",
         "sky_engine",
         "vector_math"
+      ]
+    },
+    {
+      "name": "injectable",
+      "version": "2.7.1+2",
+      "dependencies": [
+        "get_it",
+        "meta"
+      ]
+    },
+    {
+      "name": "get_it",
+      "version": "9.2.0",
+      "dependencies": [
+        "async",
+        "collection",
+        "meta"
+      ]
+    },
+    {
+      "name": "fpdart",
+      "version": "1.2.0",
+      "dependencies": []
+    },
+    {
+      "name": "fast_immutable_collections",
+      "version": "11.1.0",
+      "dependencies": [
+        "collection",
+        "meta"
       ]
     },
     {
