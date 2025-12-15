@@ -1,0 +1,48 @@
+name: todo
+description: "A Flutter project that can be used as a sandbox."
+resolution: workspace
+publish_to: 'none'
+
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # API clients
+  dio: ^5.9.0
+  retrofit: ^4.9.1
+
+  # State management
+  bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
+
+  # Routing
+  auto_route: ^10.2.2
+
+  # Dependency Injection
+  get_it: ^9.2.0
+  injectable: ^2.7.1+2
+
+  # JSON serialization
+  json_annotation: ^4.9.0
+
+  # Immutable collections & functional programming
+  fast_immutable_collections: ^11.1.0
+  fpdart: ^1.2.0
+  freezed: ^3.2.3
+  freezed_annotation: ^3.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.10.4
+  auto_route_generator: ^10.2.6
+  retrofit_generator: ^10.2.0
+  json_serializable: ^6.11.2
+  injectable_generator: ^2.11.1
+
+flutter:
+  uses-material-design: true
