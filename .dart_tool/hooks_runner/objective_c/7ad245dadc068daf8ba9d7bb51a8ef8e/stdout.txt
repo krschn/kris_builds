@@ -1,0 +1,44 @@
+Running `(cd /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/; TMPDIR=/var/folders/qt/9t38m0yj0_3f8cjlxd0kk4180000gn/T/ PATH=/Users/kris-mac/.local/bin:/usr/local/opt/ruby/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Users/kris-mac/develop/flutter/bin:/Users/kris-mac/.pub-cache/bin HOME=/Users/kris-mac /Users/kris-mac/develop/flutter/bin/cache/dart-sdk/bin/dart --packages=/Users/kris-mac/develop/projects/kris_builds/.dart_tool/package_config.json /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/objective_c/7ad245dadc068daf8ba9d7bb51a8ef8e/hook.dill --config=/Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/objective_c/7ad245dadc068daf8ba9d7bb51a8ef8e/input.json )`.
+INFO: 2026-01-29 23:26:36.652766: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-01-29 23:26:36.893304: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-01-29 23:26:37.206223: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/objective_c.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.m.o
+INFO: 2026-01-29 23:26:37.207498: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/observer.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/observer.m.o
+
+INFO: 2026-01-29 23:26:37.208914: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/ns_number.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/ns_number.m.o
+INFO: 2026-01-29 23:26:37.209074: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/protocol.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/protocol.m.o
+INFO: 2026-01-29 23:26:37.209185: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/objective_c_bindings_generated.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-01-29 23:26:37.397866: 
+INFO: 2026-01-29 23:26:37.397878: 
+INFO: 2026-01-29 23:26:37.397886: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.c.o
+INFO: 2026-01-29 23:26:37.398030: 
+INFO: 2026-01-29 23:26:37.398042: 
+INFO: 2026-01-29 23:26:37.398050: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-01-29 23:26:37.464932: 
+INFO: 2026-01-29 23:26:37.465018: 
+INFO: 2026-01-29 23:26:37.465053: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/test/util.c.o
+
+INFO: 2026-01-29 23:26:38.047804: 
+INFO: 2026-01-29 23:26:38.047841: 
+INFO: 2026-01-29 23:26:38.047853: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.m.o
+
+INFO: 2026-01-29 23:26:38.154851: 
+INFO: 2026-01-29 23:26:38.154997: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/ns_number.m.o
+
+INFO: 2026-01-29 23:26:38.194453: 
+INFO: 2026-01-29 23:26:38.194533: 
+INFO: 2026-01-29 23:26:38.194565: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/input_stream_adapter.m.o
+
+INFO: 2026-01-29 23:26:38.244035: 
+INFO: 2026-01-29 23:26:38.244114: 
+INFO: 2026-01-29 23:26:38.244144: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-01-29 23:26:38.244714: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -shared -Wl,-encryptable -undefined dynamic_lookup -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.2.sdk -target arm64-apple-darwin -mmacos-version-min=13 /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/include/dart_api_dl.c.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.c.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/test/util.c.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/input_stream_adapter.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/observer.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/ns_number.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/protocol.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/obj/src/objective_c_bindings_generated.m.o -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/objective_c.dylib
+
+INFO: 2026-01-29 23:26:38.444439: 
+INFO: 2026-01-29 23:26:38.444499: 
+INFO: 2026-01-29 23:26:38.444512: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/7ad245dadc/objective_c.dylib
+

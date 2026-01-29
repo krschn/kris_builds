@@ -3,6 +3,8 @@
 # repository.
 
 analyzer:
+  errors:
+    always_put_control_body_on_new_line: ignore
   language:
     strict-casts: true
     strict-inference: true
