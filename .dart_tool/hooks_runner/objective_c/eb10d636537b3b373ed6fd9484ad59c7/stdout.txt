@@ -1,0 +1,60 @@
+Running `(cd /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/; ANDROID_HOME=/Users/kris-mac/Library/Android/sdk TMPDIR=/var/folders/qt/9t38m0yj0_3f8cjlxd0kk4180000gn/T/ PATH=/Applications/Xcode.app/Contents/SharedFrameworks/SwiftBuild.framework/Versions/A/PlugIns/SWBBuildService.bundle/Contents/PlugIns/SWBUniversalPlatformPlugin.bundle/Contents/Frameworks/SWBUniversalPlatform.framework/Resources:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Users/kris-mac/.local/bin:/usr/local/opt/ruby/bin:/Users/kris-mac/Library/Application Support/Code/User/globalStorage/github.copilot-chat/debugCommand:/Users/kris-mac/Library/Application Support/Code/User/globalStorage/github.copilot-chat/copilotCli:/Users/kris-mac/develop/flutter/bin/:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Users/kris-mac/develop/flutter/bin:/Users/kris-mac/.pub-cache/bin HOME=/Users/kris-mac /Users/kris-mac/develop/flutter/bin/cache/dart-sdk/bin/dart --packages=/Users/kris-mac/develop/projects/kris_builds/.dart_tool/package_config.json /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/objective_c/eb10d636537b3b373ed6fd9484ad59c7/hook.dill --config=/Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/objective_c/eb10d636537b3b373ed6fd9484ad59c7/input.json )`.
+INFO: 2026-01-29 14:39:35.237071: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-01-29 14:39:35.263266: Running `/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang --version`.
+
+INFO: 2026-01-29 14:39:35.286723: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios-simulator -mios-version-min=12 -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/include/dart_api_dl.c -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-01-29 14:39:35.287348: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios-simulator -mios-version-min=12 -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/objective_c.c -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c.c.o
+
+INFO: 2026-01-29 14:39:35.288002: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios-simulator -mios-version-min=12 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/objective_c.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c.m.o
+
+ream_adapter.m.o
+
+INFO: 2026-01-29 14:39:35.288419: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios-simulator -mios-version-min=12 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/observer.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/observer.m.o
+
+INFO: 2026-01-29 14:39:35.288849: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios-simulator -mios-version-min=12 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/protocol.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/protocol.m.o
+
+
+
+INFO: 2026-01-29 14:39:35.289128: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios-simulator -mios-version-min=12 -x objective-c -fobjc-arc -c /Users/kris-mac/.pub-cache/hosted/pub.dev/objective_c-9.2.5/src/objective_c_bindings_generated.m -fpic -I src -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-01-29 14:39:35.360290: 
+INFO: 2026-01-29 14:39:35.361117: 
+INFO: 2026-01-29 14:39:35.361178: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c.c.o
+
+INFO: 2026-01-29 14:39:35.368839: 
+INFO: 2026-01-29 14:39:35.368914: 
+INFO: 2026-01-29 14:39:35.368936: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/include/dart_api_dl.c.o
+
+INFO: 2026-01-29 14:39:35.388521: 
+INFO: 2026-01-29 14:39:35.388711: 
+INFO: 2026-01-29 14:39:35.388750: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/observer.m.o
+
+INFO: 2026-01-29 14:39:35.390628: 
+INFO: 2026-01-29 14:39:35.390682: 
+INFO: 2026-01-29 14:39:35.390713: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/protocol.m.o
+
+INFO: 2026-01-29 14:39:35.621209: 
+INFO: 2026-01-29 14:39:35.621394: 
+INFO: 2026-01-29 14:39:35.621445: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/ns_number.m.o
+
+INFO: 2026-01-29 14:39:35.626689: 
+INFO: 2026-01-29 14:39:35.626804: 
+INFO: 2026-01-29 14:39:35.626844: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c.m.o
+
+INFO: 2026-01-29 14:39:35.638455: 
+INFO: 2026-01-29 14:39:35.638537: 
+INFO: 2026-01-29 14:39:35.638565: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/input_stream_adapter.m.o
+
+INFO: 2026-01-29 14:39:35.674612: 
+INFO: 2026-01-29 14:39:35.674682: 
+INFO: 2026-01-29 14:39:35.674713: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c_bindings_generated.m.o
+
+INFO: 2026-01-29 14:39:35.675350: Running: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -shared -Wl,-encryptable -undefined dynamic_lookup -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator26.2.sdk -target x86_64-apple-ios-simulator -mios-version-min=12 /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/include/dart_api_dl.c.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c.c.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/input_stream_adapter.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/observer.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/ns_number.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/protocol.m.o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/obj/src/objective_c_bindings_generated.m.o -o /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/objective_c.dylib
+
+INFO: 2026-01-29 14:39:35.730319: 
+INFO: 2026-01-29 14:39:35.730411: ld: warning: -undefined dynamic_lookup is deprecated on iOS-simulator
+
+INFO: 2026-01-29 14:39:35.730439: Generated /Users/kris-mac/develop/projects/kris_builds/.dart_tool/hooks_runner/shared/objective_c/build/eb10d63653/objective_c.dylib
+
