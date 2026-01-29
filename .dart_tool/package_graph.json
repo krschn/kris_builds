@@ -70,7 +70,6 @@
       "name": "todo",
       "version": "0.0.0",
       "dependencies": [
-        "auth",
         "bloc",
         "equatable",
         "flutter",

@@ -55,7 +55,11 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.todos,
         name: 'todos',
-        builder: (context, state) => const TodoPage(),
+        builder: (context, state) => TodoPage(
+          onLogout: () {
+            context.read<AuthBloc>().add(const LogoutRequested());
+          },
+        ),
       ),
     ],
     errorBuilder: (context, state) =>

@@ -1,4 +1,3 @@
-import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:widgets/widgets.dart';
@@ -7,7 +6,9 @@ import '../../domain/entities/todo.dart';
 import '../bloc/todo_bloc.dart';
 
 class TodoPage extends StatefulWidget {
-  const TodoPage({super.key});
+  const TodoPage({super.key, this.onLogout});
+
+  final VoidCallback? onLogout;
 
   @override
   State<TodoPage> createState() => _TodoPageState();
@@ -104,15 +105,15 @@ class _TodoPageState extends State<TodoPage> {
 
     return AppScaffold(
       title: 'My Todos',
-      actions: <Widget>[
-        IconButton(
-          icon: const Icon(Icons.logout),
-          onPressed: () {
-            context.read<AuthBloc>().add(const LogoutRequested());
-          },
-          tooltip: 'Logout',
-        ),
-      ],
+      actions: widget.onLogout != null
+          ? <Widget>[
+              IconButton(
+                icon: const Icon(Icons.logout),
+                onPressed: widget.onLogout,
+                tooltip: 'Logout',
+              ),
+            ]
+          : null,
       floatingActionButton: FloatingActionButton(
         onPressed: _showAddTodoDialog,
         tooltip: 'Add Todo',
