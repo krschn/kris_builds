@@ -3,6 +3,7 @@
     "auth",
     "example_app",
     "kris_builds",
+    "todo",
     "widgets"
   ],
   "packages": [
@@ -57,6 +58,24 @@
         "go_router",
         "hive",
         "hive_flutter",
+        "todo",
+        "widgets"
+      ],
+      "devDependencies": [
+        "flutter_lints",
+        "flutter_test"
+      ]
+    },
+    {
+      "name": "todo",
+      "version": "0.0.0",
+      "dependencies": [
+        "auth",
+        "bloc",
+        "equatable",
+        "flutter",
+        "flutter_bloc",
+        "hive",
         "widgets"
       ],
       "devDependencies": [
@@ -128,31 +147,10 @@
       ]
     },
     {
-      "name": "hive_flutter",
-      "version": "1.1.0",
-      "dependencies": [
-        "flutter",
-        "hive",
-        "path",
-        "path_provider"
-      ]
-    },
-    {
       "name": "hive",
       "version": "2.2.3",
       "dependencies": [
         "crypto",
-        "meta"
-      ]
-    },
-    {
-      "name": "go_router",
-      "version": "17.0.1",
-      "dependencies": [
-        "collection",
-        "flutter",
-        "flutter_web_plugins",
-        "logging",
         "meta"
       ]
     },
@@ -173,11 +171,6 @@
       ]
     },
     {
-      "name": "cupertino_icons",
-      "version": "1.0.8",
-      "dependencies": []
-    },
-    {
       "name": "flutter",
       "version": "0.0.0",
       "dependencies": [
@@ -188,6 +181,32 @@
         "sky_engine",
         "vector_math"
       ]
+    },
+    {
+      "name": "hive_flutter",
+      "version": "1.1.0",
+      "dependencies": [
+        "flutter",
+        "hive",
+        "path",
+        "path_provider"
+      ]
+    },
+    {
+      "name": "go_router",
+      "version": "17.0.1",
+      "dependencies": [
+        "collection",
+        "flutter",
+        "flutter_web_plugins",
+        "logging",
+        "meta"
+      ]
+    },
+    {
+      "name": "cupertino_icons",
+      "version": "1.0.8",
+      "dependencies": []
     },
     {
       "name": "yaml_edit",
@@ -443,34 +462,10 @@
       ]
     },
     {
-      "name": "path_provider",
-      "version": "2.1.5",
-      "dependencies": [
-        "flutter",
-        "path_provider_android",
-        "path_provider_foundation",
-        "path_provider_linux",
-        "path_provider_platform_interface",
-        "path_provider_windows"
-      ]
-    },
-    {
       "name": "crypto",
       "version": "3.0.7",
       "dependencies": [
         "typed_data"
-      ]
-    },
-    {
-      "name": "logging",
-      "version": "1.3.0",
-      "dependencies": []
-    },
-    {
-      "name": "flutter_web_plugins",
-      "version": "0.0.0",
-      "dependencies": [
-        "flutter"
       ]
     },
     {
@@ -498,6 +493,30 @@
       "name": "characters",
       "version": "1.4.0",
       "dependencies": []
+    },
+    {
+      "name": "path_provider",
+      "version": "2.1.5",
+      "dependencies": [
+        "flutter",
+        "path_provider_android",
+        "path_provider_foundation",
+        "path_provider_linux",
+        "path_provider_platform_interface",
+        "path_provider_windows"
+      ]
+    },
+    {
+      "name": "logging",
+      "version": "1.3.0",
+      "dependencies": []
+    },
+    {
+      "name": "flutter_web_plugins",
+      "version": "0.0.0",
+      "dependencies": [
+        "flutter"
+      ]
     },
     {
       "name": "source_span",
@@ -604,6 +623,20 @@
       ]
     },
     {
+      "name": "typed_data",
+      "version": "1.4.0",
+      "dependencies": [
+        "collection"
+      ]
+    },
+    {
+      "name": "nested",
+      "version": "1.0.0",
+      "dependencies": [
+        "flutter"
+      ]
+    },
+    {
       "name": "path_provider_windows",
       "version": "2.3.0",
       "dependencies": [
@@ -649,20 +682,6 @@
       "dependencies": [
         "flutter",
         "path_provider_platform_interface"
-      ]
-    },
-    {
-      "name": "typed_data",
-      "version": "1.4.0",
-      "dependencies": [
-        "collection"
-      ]
-    },
-    {
-      "name": "nested",
-      "version": "1.0.0",
-      "dependencies": [
-        "flutter"
       ]
     },
     {
