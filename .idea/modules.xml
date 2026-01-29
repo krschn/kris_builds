@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<module fileurl="file://$PROJECT_DIR$/packages/auth/melos_auth.iml" filepath="$PROJECT_DIR$/packages/auth/melos_auth.iml"/>
+<module fileurl="file://$PROJECT_DIR$/apps/example_app/melos_example_app.iml" filepath="$PROJECT_DIR$/apps/example_app/melos_example_app.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/todo/melos_todo.iml" filepath="$PROJECT_DIR$/packages/todo/melos_todo.iml"/>
+<module fileurl="file://$PROJECT_DIR$/packages/widgets/melos_widgets.iml" filepath="$PROJECT_DIR$/packages/widgets/melos_widgets.iml"/>
+<module fileurl="file://$PROJECT_DIR$/melos_kris_builds.iml" filepath="$PROJECT_DIR$/melos_kris_builds.iml"/>
 <module fileurl="file://$PROJECT_DIR$/apps/barterhood/melos_barterhood.iml" filepath="$PROJECT_DIR$/apps/barterhood/melos_barterhood.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/core/melos_core.iml" filepath="$PROJECT_DIR$/packages/core/melos_core.iml"/>
 <module fileurl="file://$PROJECT_DIR$/packages/utils/melos_utils.iml" filepath="$PROJECT_DIR$/packages/utils/melos_utils.iml"/>
-<module fileurl="file://$PROJECT_DIR$/packages/widgets/melos_widgets.iml" filepath="$PROJECT_DIR$/packages/widgets/melos_widgets.iml"/>
-<module fileurl="file://$PROJECT_DIR$/melos_kris_builds.iml" filepath="$PROJECT_DIR$/melos_kris_builds.iml"/>
     </modules>
   </component>
 </project>
