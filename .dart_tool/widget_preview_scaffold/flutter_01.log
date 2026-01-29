@@ -1,0 +1,57 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter widget-preview start --machine --web-server --dtd-url ws://127.0.0.1:51078/TnpyCQ-w5As= --devtools-server-address http://127.0.0.1:9100/
+
+## exception
+
+StateError: Bad state: No element
+
+```
+#0      ListBase.firstWhere (dart:collection/list.dart:132:5)
+#1      PreviewManifest._calculatePubspecHashes (package:flutter_tools/src/widget_preview/preview_manifest.dart:69:77)
+#2      PreviewManifest.updatePubspecHash (package:flutter_tools/src/widget_preview/preview_manifest.dart:146:32)
+#3      PreviewPubspecBuilder.populatePreviewPubspec (package:flutter_tools/src/widget_preview/preview_pubspec_builder.dart:174:21)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.38.1, on macOS 15.7.2 24G325 darwin-arm64, locale en-PH) [621ms]
+    • Flutter version 3.38.1 on channel stable at /Users/kris-mac/develop/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision b45fa18946 (5 weeks ago), 2025-11-12 22:09:06 -0600
+    • Engine revision b5990e5ccc
+    • Dart version 3.10.0
+    • DevTools version 2.51.1
+    • Feature flags: enable-web, enable-linux-desktop, enable-macos-desktop, enable-windows-desktop, enable-android, enable-ios, cli-animations, enable-native-assets, omit-legacy-version-file, enable-lldb-debugging
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [4.5s]
+    • Android SDK at /Users/kris-mac/Library/Android/sdk
+    • Emulator version 36.2.12.0 (build_id 14214601) (CL:N/A)
+    • Platform android-36, build-tools 36.1.0
+    • Java binary at: /Applications/Android Studio.app/Contents/jbr/Contents/Home/bin/java
+      This is the JDK bundled with the latest Android Studio installation on this machine.
+      To manually set the JDK path, use: `flutter config --jdk-dir="path/to/jdk"`.
+    • Java version OpenJDK Runtime Environment (build 21.0.8+-14196175-b1038.72)
+    • All Android licenses accepted.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 26.1.1) [2.4s]
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 17B100
+    • CocoaPods version 1.16.2
+
+[✗] Chrome - develop for the web (Cannot find Chrome executable at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome) [2ms]
+    ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+
+[✓] Connected device (1 available) [6.1s]
+    • macOS (desktop) • macos • darwin-arm64 • macOS 15.7.2 24G325 darwin-arm64
+
+[✓] Network resources [355ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 1 category.
+```
