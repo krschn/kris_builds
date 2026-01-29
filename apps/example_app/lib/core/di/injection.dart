@@ -8,15 +8,7 @@ import '../storage/hive_service.dart';
 ///
 /// Provides singleton instances of repositories, use cases, and blocs.
 class Injection {
-  Injection._();
-
   static Injection? _instance;
-
-  // Auth module
-  late final AuthModule _authModule;
-
-  // Todo module
-  late final TodoModule _todoModule;
 
   /// Get the singleton instance
   static Injection get instance {
@@ -24,16 +16,21 @@ class Injection {
     return _instance!;
   }
 
-  /// Initialize all dependencies
-  void init() {
-    // Auth module (handles all auth dependencies internally)
-    final MockAuthDataSource authDataSource = MockAuthDataSource(HiveService.authBox);
-    _authModule = AuthModule(dataSource: authDataSource);
+  /// Provides all necessary blocs for the app
+  static List<BlocProvider<dynamic>> get providers => <BlocProvider<dynamic>>[
+    BlocProvider<AuthBloc>(
+      create: (_) => instance.createAuthBloc()..add(const CheckAuthStatus()),
+    ),
+    BlocProvider<TodoBloc>(create: (_) => instance.createTodoBloc()),
+  ];
 
-    // Todo module (handles all todo dependencies internally)
-    final TodoLocalDataSource todoDataSource = TodoLocalDataSource(HiveService.todoBox);
-    _todoModule = TodoModule(dataSource: todoDataSource);
-  }
+  // Auth module
+  late final AuthModule _authModule;
+
+  // Todo module
+  late final TodoModule _todoModule;
+
+  Injection._();
 
   // Getters for repositories
   AuthRepository get authRepository => _authModule.repository;
@@ -44,13 +41,18 @@ class Injection {
 
   TodoBloc createTodoBloc() => _todoModule.createTodoBloc();
 
-  /// Provides all necessary blocs for the app
-  static List<BlocProvider<dynamic>> get providers => <BlocProvider<dynamic>>[
-        BlocProvider<AuthBloc>(
-          create: (_) => instance.createAuthBloc()..add(const CheckAuthStatus()),
-        ),
-        BlocProvider<TodoBloc>(
-          create: (_) => instance.createTodoBloc(),
-        ),
-      ];
+  /// Initialize all dependencies
+  void init() {
+    // Auth module (handles all auth dependencies internally)
+    final MockAuthDataSource authDataSource = MockAuthDataSource(
+      HiveService.authBox,
+    );
+    _authModule = AuthModule(dataSource: authDataSource);
+
+    // Todo module (handles all todo dependencies internally)
+    final TodoLocalDataSource todoDataSource = TodoLocalDataSource(
+      HiveService.todoBox,
+    );
+    _todoModule = TodoModule(dataSource: todoDataSource);
+  }
 }
