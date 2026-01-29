@@ -1,0 +1,27 @@
+name: todo
+description: Todo management package with clean architecture.
+resolution: workspace
+publish_to: 'none'
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  auth:
+    path: ../auth
+  widgets:
+    path: ../widgets
+  bloc: ^9.1.0
+  flutter_bloc: ^9.1.1
+  hive: ^2.2.3
+  equatable: ^2.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

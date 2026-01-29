@@ -6,6 +6,7 @@ workspace:
   - packages/widgets
   - packages/auth
   - apps/example_app
+  - packages/todo
 
 dev_dependencies:
   melos: ^7.3.0

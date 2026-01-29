@@ -6,7 +6,6 @@ import 'package:widgets/widgets.dart';
 import '../../domain/entities/todo.dart';
 import '../bloc/todo_bloc.dart';
 
-/// Todo list page displaying and managing todos.
 class TodoPage extends StatefulWidget {
   const TodoPage({super.key});
 
@@ -16,15 +15,11 @@ class TodoPage extends StatefulWidget {
 
 /// Individual todo item widget
 class _TodoItem extends StatelessWidget {
+  const _TodoItem({required this.todo, required this.onTap, required this.onToggle});
   final Todo todo;
 
   final VoidCallback onTap;
   final VoidCallback onToggle;
-  const _TodoItem({
-    required this.todo,
-    required this.onTap,
-    required this.onToggle,
-  });
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +32,11 @@ class _TodoItem extends StatelessWidget {
         padding: const EdgeInsets.all(AppSpacing.md),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(top: 2),
               child: Semantics(
-                label: todo.isCompleted
-                    ? 'Mark as incomplete'
-                    : 'Mark as complete',
+                label: todo.isCompleted ? 'Mark as incomplete' : 'Mark as complete',
                 child: InkWell(
                   onTap: onToggle,
                   customBorder: const CircleBorder(),
@@ -58,16 +51,10 @@ class _TodoItem extends StatelessWidget {
                             : theme.colorScheme.outline,
                         width: 2,
                       ),
-                      color: todo.isCompleted
-                          ? theme.colorScheme.primary
-                          : Colors.transparent,
+                      color: todo.isCompleted ? theme.colorScheme.primary : Colors.transparent,
                     ),
                     child: todo.isCompleted
-                        ? Icon(
-                            Icons.check,
-                            size: 16,
-                            color: theme.colorScheme.onPrimary,
-                          )
+                        ? Icon(Icons.check, size: 16, color: theme.colorScheme.onPrimary)
                         : null,
                   ),
                 ),
@@ -77,30 +64,23 @@ class _TodoItem extends StatelessWidget {
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: <Widget>[
                   Text(
                     todo.title,
                     style: theme.textTheme.bodyLarge?.copyWith(
-                      decoration: todo.isCompleted
-                          ? TextDecoration.lineThrough
-                          : null,
+                      decoration: todo.isCompleted ? TextDecoration.lineThrough : null,
                       color: todo.isCompleted
                           ? theme.colorScheme.onSurface.withValues(alpha: 0.5)
                           : null,
                     ),
                   ),
-                  if (todo.description != null &&
-                      todo.description!.isNotEmpty) ...[
+                  if (todo.description != null && todo.description!.isNotEmpty) ...<Widget>[
                     const SizedBox(height: 4),
                     Text(
                       todo.description!,
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurface.withValues(
-                          alpha: 0.7,
-                        ),
-                        decoration: todo.isCompleted
-                            ? TextDecoration.lineThrough
-                            : null,
+                        color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                        decoration: todo.isCompleted ? TextDecoration.lineThrough : null,
                       ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -109,10 +89,7 @@ class _TodoItem extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(
-              Icons.chevron_right,
-              color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
-            ),
+            Icon(Icons.chevron_right, color: theme.colorScheme.onSurface.withValues(alpha: 0.5)),
           ],
         ),
       ),
@@ -127,7 +104,7 @@ class _TodoPageState extends State<TodoPage> {
 
     return AppScaffold(
       title: 'My Todos',
-      actions: [
+      actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.logout),
           onPressed: () {
@@ -142,16 +119,14 @@ class _TodoPageState extends State<TodoPage> {
         child: const Icon(Icons.add),
       ),
       body: BlocConsumer<TodoBloc, TodoState>(
-        listener: (context, state) {
+        listener: (BuildContext context, TodoState state) {
           if (state is TodoError) {
             AppSnackbar.error(context: context, message: state.message);
           }
         },
-        builder: (context, state) {
+        builder: (BuildContext context, TodoState state) {
           if (state is TodoLoading) {
-            return const Center(
-              child: AppLoadingIndicator(size: AppLoadingSize.large),
-            );
+            return const Center(child: AppLoadingIndicator(size: AppLoadingSize.large));
           }
 
           if (state is TodoLoaded) {
@@ -159,7 +134,7 @@ class _TodoPageState extends State<TodoPage> {
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                  children: <Widget>[
                     Icon(
                       Icons.task_alt,
                       size: 80,
@@ -171,9 +146,7 @@ class _TodoPageState extends State<TodoPage> {
                     Text(
                       'Tap + to add your first todo',
                       style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurface.withValues(
-                          alpha: 0.7,
-                        ),
+                        color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                       ),
                     ),
                   ],
@@ -187,51 +160,37 @@ class _TodoPageState extends State<TodoPage> {
               },
               child: ListView(
                 padding: AppSpacing.paddingLg,
-                children: [
-                  if (state.incompleteTodos.isNotEmpty) ...[
+                children: <Widget>[
+                  if (state.incompleteTodos.isNotEmpty) ...<Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(
-                        left: 4,
-                        bottom: AppSpacing.sm,
-                      ),
+                      padding: const EdgeInsets.only(left: 4, bottom: AppSpacing.sm),
                       child: Text(
                         'Active (${state.incompleteTodos.length})',
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
                       ),
                     ),
                     ...state.incompleteTodos.map(
                       (Todo todo) => _TodoItem(
                         todo: todo,
                         onTap: () => _showEditTodoDialog(todo),
-                        onToggle: () => context.read<TodoBloc>().add(
-                          ToggleTodoCompletion(todo.id),
-                        ),
+                        onToggle: () => context.read<TodoBloc>().add(ToggleTodoCompletion(todo.id)),
                       ),
                     ),
                   ],
-                  if (state.completedTodos.isNotEmpty) ...[
+                  if (state.completedTodos.isNotEmpty) ...<Widget>[
                     AppSpacing.gapLg,
                     Padding(
-                      padding: const EdgeInsets.only(
-                        left: 4,
-                        bottom: AppSpacing.sm,
-                      ),
+                      padding: const EdgeInsets.only(left: 4, bottom: AppSpacing.sm),
                       child: Text(
                         'Completed (${state.completedTodos.length})',
-                        style: theme.textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.w600,
-                        ),
+                        style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600),
                       ),
                     ),
                     ...state.completedTodos.map(
                       (Todo todo) => _TodoItem(
                         todo: todo,
                         onTap: () => _showEditTodoDialog(todo),
-                        onToggle: () => context.read<TodoBloc>().add(
-                          ToggleTodoCompletion(todo.id),
-                        ),
+                        onToggle: () => context.read<TodoBloc>().add(ToggleTodoCompletion(todo.id)),
                       ),
                     ),
                   ],
@@ -263,19 +222,17 @@ class _TodoPageState extends State<TodoPage> {
     final TextEditingController titleController = TextEditingController();
     final TextEditingController descriptionController = TextEditingController();
 
-    AppBottomSheet.show(
+    AppBottomSheet.show<void>(
       context: context,
       title: 'Add Todo',
       showCloseButton: true,
       isScrollControlled: true,
       child: Padding(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children: <Widget>[
             AppTextField(
               controller: titleController,
               label: 'Title',
@@ -316,26 +273,22 @@ class _TodoPageState extends State<TodoPage> {
   }
 
   void _showEditTodoDialog(Todo todo) {
-    final TextEditingController titleController = TextEditingController(
-      text: todo.title,
-    );
+    final TextEditingController titleController = TextEditingController(text: todo.title);
     final TextEditingController descriptionController = TextEditingController(
       text: todo.description ?? '',
     );
 
-    AppBottomSheet.show(
+    AppBottomSheet.show<void>(
       context: context,
       title: 'Edit Todo',
       showCloseButton: true,
       isScrollControlled: true,
       child: Padding(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
+        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+          children: <Widget>[
             AppTextField(
               controller: titleController,
               label: 'Title',

@@ -11,6 +11,18 @@ class TodoModel extends Todo {
     super.completedAt,
   });
 
+  /// Create a TodoModel from a Todo entity
+  factory TodoModel.fromEntity(Todo todo) {
+    return TodoModel(
+      id: todo.id,
+      title: todo.title,
+      description: todo.description,
+      isCompleted: todo.isCompleted,
+      createdAt: todo.createdAt,
+      completedAt: todo.completedAt,
+    );
+  }
+
   /// Create a TodoModel from a JSON map
   factory TodoModel.fromJson(Map<String, dynamic> json) {
     return TodoModel(
@@ -22,30 +34,6 @@ class TodoModel extends Todo {
       completedAt: json['completedAt'] != null
           ? DateTime.parse(json['completedAt'] as String)
           : null,
-    );
-  }
-
-  /// Convert to JSON map
-  Map<String, dynamic> toJson() {
-    return {
-      'id': id,
-      'title': title,
-      'description': description,
-      'isCompleted': isCompleted,
-      'createdAt': createdAt.toIso8601String(),
-      'completedAt': completedAt?.toIso8601String(),
-    };
-  }
-
-  /// Create a TodoModel from a Todo entity
-  factory TodoModel.fromEntity(Todo todo) {
-    return TodoModel(
-      id: todo.id,
-      title: todo.title,
-      description: todo.description,
-      isCompleted: todo.isCompleted,
-      createdAt: todo.createdAt,
-      completedAt: todo.completedAt,
     );
   }
 
@@ -67,5 +55,17 @@ class TodoModel extends Todo {
       createdAt: createdAt ?? this.createdAt,
       completedAt: completedAt ?? this.completedAt,
     );
+  }
+
+  /// Convert to JSON map
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'id': id,
+      'title': title,
+      'description': description,
+      'isCompleted': isCompleted,
+      'createdAt': createdAt.toIso8601String(),
+      'completedAt': completedAt?.toIso8601String(),
+    };
   }
 }

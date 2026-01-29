@@ -504,6 +504,12 @@
       "rootUri": "../apps/example_app",
       "packageUri": "lib/",
       "languageVersion": "3.10"
+    },
+    {
+      "name": "todo",
+      "rootUri": "../packages/todo",
+      "packageUri": "lib/",
+      "languageVersion": "3.10"
     }
   ],
   "generator": "pub",

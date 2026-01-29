@@ -1,6 +1,5 @@
 import 'package:equatable/equatable.dart';
 
-/// Todo entity representing a task item.
 class Todo extends Equatable {
   const Todo({
     required this.id,
@@ -17,6 +16,9 @@ class Todo extends Equatable {
   final bool isCompleted;
   final DateTime createdAt;
   final DateTime? completedAt;
+
+  @override
+  List<Object?> get props => <Object?>[id, title, description, isCompleted, createdAt, completedAt];
 
   /// Create a copy with updated fields
   Todo copyWith({
@@ -36,7 +38,4 @@ class Todo extends Equatable {
       completedAt: completedAt ?? this.completedAt,
     );
   }
-
-  @override
-  List<Object?> get props => [id, title, description, isCompleted, createdAt, completedAt];
 }

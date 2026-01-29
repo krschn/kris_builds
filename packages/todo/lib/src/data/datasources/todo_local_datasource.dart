@@ -8,40 +8,18 @@ import '../models/todo_model.dart';
 class TodoLocalDataSource {
   TodoLocalDataSource(this._box);
 
-  final Box<dynamic> _box;
-
   static const String _todosKey = 'todos';
 
-  /// Get all todos from local storage
-  Future<List<TodoModel>> getTodos() async {
-    final String? todosJson = _box.get(_todosKey) as String?;
-    if (todosJson == null) return [];
-
-    final List<dynamic> todosList = jsonDecode(todosJson) as List<dynamic>;
-    return todosList
-        .map((dynamic json) => TodoModel.fromJson(json as Map<String, dynamic>))
-        .toList();
-  }
-
-  /// Save all todos to local storage
-  Future<void> _saveTodos(List<TodoModel> todos) async {
-    final String todosJson =
-        jsonEncode(todos.map((TodoModel t) => t.toJson()).toList());
-    await _box.put(_todosKey, todosJson);
-  }
+  final Box<dynamic> _box;
 
   /// Add a new todo
-  Future<TodoModel> addTodo({
-    required String title,
-    String? description,
-  }) async {
+  Future<TodoModel> addTodo({required String title, String? description}) async {
     final List<TodoModel> todos = await getTodos();
 
     final TodoModel newTodo = TodoModel(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       title: title,
       description: description,
-      isCompleted: false,
       createdAt: DateTime.now(),
     );
 
@@ -50,25 +28,23 @@ class TodoLocalDataSource {
     return newTodo;
   }
 
-  /// Update an existing todo
-  Future<TodoModel> updateTodo(TodoModel todo) async {
-    final List<TodoModel> todos = await getTodos();
-
-    final int index = todos.indexWhere((TodoModel t) => t.id == todo.id);
-    if (index == -1) {
-      throw Exception('Todo not found');
-    }
-
-    todos[index] = todo;
-    await _saveTodos(todos);
-    return todo;
-  }
-
   /// Delete a todo by id
   Future<void> deleteTodo(String id) async {
     final List<TodoModel> todos = await getTodos();
     todos.removeWhere((TodoModel t) => t.id == id);
     await _saveTodos(todos);
+  }
+
+  /// Get all todos from local storage
+  Future<List<TodoModel>> getTodos() async {
+    final String? todosJson = _box.get(_todosKey) as String?;
+    if (todosJson == null) {
+      return <TodoModel>[];
+    }
+    final List<dynamic> todosList = jsonDecode(todosJson) as List<dynamic>;
+    return todosList
+        .map((dynamic json) => TodoModel.fromJson(json as Map<String, dynamic>))
+        .toList();
   }
 
   /// Toggle todo completion status
@@ -90,5 +66,25 @@ class TodoLocalDataSource {
     todos[index] = updatedTodo;
     await _saveTodos(todos);
     return updatedTodo;
+  }
+
+  /// Update an existing todo
+  Future<TodoModel> updateTodo(TodoModel todo) async {
+    final List<TodoModel> todos = await getTodos();
+
+    final int index = todos.indexWhere((TodoModel t) => t.id == todo.id);
+    if (index == -1) {
+      throw Exception('Todo not found');
+    }
+
+    todos[index] = todo;
+    await _saveTodos(todos);
+    return todo;
+  }
+
+  /// Save all todos to local storage
+  Future<void> _saveTodos(List<TodoModel> todos) async {
+    final String todosJson = jsonEncode(todos.map((TodoModel t) => t.toJson()).toList());
+    await _box.put(_todosKey, todosJson);
   }
 }
