@@ -1,0 +1,23 @@
+name: auth
+description: Authentication package with domain, data, and presentation layers.
+resolution: workspace
+publish_to: 'none'
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  design_system:
+    path: ../../core/design_system
+  flutter_riverpod: ^2.5.0
+  hive: ^2.2.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

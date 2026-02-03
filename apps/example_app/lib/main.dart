@@ -1,8 +1,9 @@
+import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:todo/todo.dart';
 
 import 'app.dart';
-import 'core/di/injection.dart';
 import 'core/storage/hive_service.dart';
 
 Future<void> main() async {
@@ -11,10 +12,14 @@ Future<void> main() async {
   // Initialize Hive storage
   await HiveService.init();
 
-  // Run the app with dependency injection
+  // Run the app with Riverpod
   runApp(
-    MultiBlocProvider(
-      providers: Injection.providers,
+    ProviderScope(
+      overrides: <Override>[
+        // Provide the Hive boxes to the providers
+        authBoxProvider.overrideWithValue(HiveService.authBox),
+        todoBoxProvider.overrideWithValue(HiveService.todoBox),
+      ],
       child: const App(),
     ),
   );

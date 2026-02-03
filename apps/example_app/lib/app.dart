@@ -1,7 +1,7 @@
 import 'package:auth/auth.dart';
+import 'package:design_system/design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:widgets/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'core/navigation/app_auth_navigation.dart';
 import 'core/router/app_router.dart';
@@ -16,12 +16,26 @@ import 'core/router/app_router.dart';
 // );
 
 /// The root widget of the application.
-class App extends StatelessWidget {
+class App extends ConsumerStatefulWidget {
   const App({super.key});
 
   @override
+  ConsumerState<App> createState() => _AppState();
+}
+
+class _AppState extends ConsumerState<App> {
+  @override
+  void initState() {
+    super.initState();
+    // Check auth status when app starts
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(authProvider.notifier).checkAuthStatus();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final AuthBloc authBloc = context.read<AuthBloc>();
+    final router = ref.watch(routerProvider);
 
     // To use custom theming, uncomment the config above and pass it:
     // theme: AppTheme.light(appThemeConfig),
@@ -35,7 +49,7 @@ class App extends StatelessWidget {
         theme: AppTheme.light(),
         darkTheme: AppTheme.dark(),
         themeMode: ThemeMode.system,
-        routerConfig: AppRouter.router(authBloc),
+        routerConfig: router,
       ),
     );
   }

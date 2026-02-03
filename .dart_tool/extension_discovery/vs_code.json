@@ -1,1 +1,25 @@
-{"version":2,"entries":[{"package":"kris_builds","rootUri":"../","packageUri":"lib/"},{"package":"widgets","rootUri":"../packages/widgets/","packageUri":"lib/"},{"package":"auth","rootUri":"../packages/auth/","packageUri":"lib/"},{"package":"example_app","rootUri":"../apps/example_app/","packageUri":"lib/"}]}
+{
+    "version": 2,
+    "entries": [
+        {
+            "package": "kris_builds",
+            "rootUri": "../",
+            "packageUri": "lib/"
+        },
+        {
+            "package": "widgets",
+            "rootUri": "../packages/widgets/",
+            "packageUri": "lib/"
+        },
+        {
+            "package": "auth",
+            "rootUri": "../packages/auth/",
+            "packageUri": "lib/"
+        },
+        {
+            "package": "example_app",
+            "rootUri": "../apps/example_app/",
+            "packageUri": "lib/"
+        }
+    ]
+}

@@ -1,26 +1,35 @@
 import 'package:auth/auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:todo/todo.dart';
 
-/// Application router configuration using go_router.
-class AppRouter {
-  static final GlobalKey<NavigatorState> _rootNavigatorKey =
+/// Application route paths
+class AppRoutes {
+  AppRoutes._();
+
+  static const String login = '/login';
+  static const String register = '/register';
+  static const String forgotPassword = '/forgot-password';
+  static const String todos = '/todos';
+}
+
+/// Provider for the GoRouter configuration.
+///
+/// This provider creates a router that listens to auth state changes.
+final Provider<GoRouter> routerProvider = Provider<GoRouter>((Ref ref) {
+  final GlobalKey<NavigatorState> rootNavigatorKey =
       GlobalKey<NavigatorState>(debugLabel: 'root');
 
-  AppRouter._();
-
-  static GoRouter router(AuthBloc authBloc) => GoRouter(
-    navigatorKey: _rootNavigatorKey,
+  return GoRouter(
+    navigatorKey: rootNavigatorKey,
     initialLocation: AppRoutes.login,
     debugLogDiagnostics: true,
-    refreshListenable: _GoRouterRefreshStream(authBloc.stream),
-    redirect: (context, state) {
-      final bool isAuthenticated =
-          context.read<AuthBloc>().state is AuthAuthenticated;
-      final bool isAuthRoute =
-          state.matchedLocation == AppRoutes.login ||
+    refreshListenable: _AuthRefreshNotifier(ref),
+    redirect: (BuildContext context, GoRouterState state) {
+      final AuthState authState = ref.read(authProvider);
+      final bool isAuthenticated = authState is AuthAuthenticated;
+      final bool isAuthRoute = state.matchedLocation == AppRoutes.login ||
           state.matchedLocation == AppRoutes.register ||
           state.matchedLocation == AppRoutes.forgotPassword;
 
@@ -36,59 +45,55 @@ class AppRouter {
 
       return null;
     },
-    routes: [
+    routes: <RouteBase>[
       GoRoute(
         path: AppRoutes.login,
         name: 'login',
-        builder: (context, state) => const LoginPage(),
+        builder: (BuildContext context, GoRouterState state) =>
+            const LoginPage(),
       ),
       GoRoute(
         path: AppRoutes.register,
         name: 'register',
-        builder: (context, state) => const RegisterPage(),
+        builder: (BuildContext context, GoRouterState state) =>
+            const RegisterPage(),
       ),
       GoRoute(
         path: AppRoutes.forgotPassword,
         name: 'forgotPassword',
-        builder: (context, state) => const ForgotPasswordPage(),
+        builder: (BuildContext context, GoRouterState state) =>
+            const ForgotPasswordPage(),
       ),
       GoRoute(
         path: AppRoutes.todos,
         name: 'todos',
-        builder: (context, state) => TodoPage(
-          onLogout: () {
-            context.read<AuthBloc>().add(const LogoutRequested());
+        builder: (BuildContext context, GoRouterState state) => Consumer(
+          builder: (BuildContext context, WidgetRef ref, Widget? child) {
+            return TodoPage(
+              onLogout: () {
+                ref.read(authProvider.notifier).logout();
+              },
+            );
           },
         ),
       ),
     ],
-    errorBuilder: (context, state) =>
+    errorBuilder: (BuildContext context, GoRouterState state) =>
         Scaffold(body: Center(child: Text('Page not found: ${state.uri}'))),
   );
-}
+});
 
-/// Application route paths
-class AppRoutes {
-  static const String login = '/login';
-
-  static const String register = '/register';
-  static const String forgotPassword = '/forgot-password';
-  static const String todos = '/todos';
-  AppRoutes._();
-}
-
-/// Converts a Stream into a Listenable for GoRouter refresh
-class _GoRouterRefreshStream extends ChangeNotifier {
-  late final dynamic _subscription;
-
-  _GoRouterRefreshStream(Stream<dynamic> stream) {
+/// Notifier that listens to auth state changes and refreshes the router.
+class _AuthRefreshNotifier extends ChangeNotifier {
+  _AuthRefreshNotifier(this._ref) {
+    // Initial notification
     notifyListeners();
-    _subscription = stream.asBroadcastStream().listen((_) => notifyListeners());
+
+    // Listen to auth state changes
+    _ref.listen<AuthState>(authProvider, (AuthState? previous, AuthState next) {
+      notifyListeners();
+    });
   }
 
-  @override
-  void dispose() {
-    _subscription.cancel();
-    super.dispose();
-  }
+  final Ref _ref;
 }

@@ -3,10 +3,10 @@ publish_to: none
 environment:
   sdk: ^3.10.0
 workspace:
-  - packages/widgets
-  - packages/auth
+  - packages/core/design_system
+  - packages/features/auth
+  - packages/features/todo
   - apps/example_app
-  - packages/todo
 
 dev_dependencies:
   melos: ^7.3.0
@@ -17,14 +17,10 @@ melos:
       environment:
         sdk: ^3.10.0
       dependencies:
-        bloc: ^9.1.0
-        flutter_bloc: ^9.1.1
-        freezed_annotation: ^3.1.0
-        json_annotation: ^4.9.0
+        flutter_riverpod: ^2.5.0
         go_router: ^17.0.1
         hive: ^2.2.3
         hive_flutter: ^1.1.0
-        equatable: ^2.0.7
 
       dev_dependencies:
         flutter_lints: ^6.0.0
