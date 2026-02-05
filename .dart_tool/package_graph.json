@@ -64,7 +64,8 @@
       ],
       "devDependencies": [
         "flutter_lints",
-        "flutter_test"
+        "flutter_test",
+        "patrol"
       ]
     },
     {
@@ -192,6 +193,23 @@
         "meta",
         "sky_engine",
         "vector_math"
+      ]
+    },
+    {
+      "name": "patrol",
+      "version": "4.1.0",
+      "dependencies": [
+        "boolean_selector",
+        "equatable",
+        "flutter",
+        "flutter_test",
+        "http",
+        "json_annotation",
+        "meta",
+        "patrol_finders",
+        "patrol_log",
+        "shelf",
+        "test_api"
       ]
     },
     {
@@ -553,6 +571,52 @@
       "dependencies": []
     },
     {
+      "name": "shelf",
+      "version": "1.4.2",
+      "dependencies": [
+        "async",
+        "collection",
+        "http_parser",
+        "path",
+        "stack_trace",
+        "stream_channel"
+      ]
+    },
+    {
+      "name": "patrol_log",
+      "version": "0.6.0",
+      "dependencies": [
+        "dispose_scope",
+        "equatable",
+        "json_annotation"
+      ]
+    },
+    {
+      "name": "patrol_finders",
+      "version": "3.0.0",
+      "dependencies": [
+        "flutter",
+        "flutter_test",
+        "meta",
+        "patrol_log"
+      ]
+    },
+    {
+      "name": "json_annotation",
+      "version": "4.9.0",
+      "dependencies": [
+        "meta"
+      ]
+    },
+    {
+      "name": "boolean_selector",
+      "version": "2.1.2",
+      "dependencies": [
+        "source_span",
+        "string_scanner"
+      ]
+    },
+    {
       "name": "path_provider",
       "version": "2.1.5",
       "dependencies": [
@@ -590,13 +654,6 @@
       "version": "7.0.1",
       "dependencies": [
         "collection",
-        "meta"
-      ]
-    },
-    {
-      "name": "json_annotation",
-      "version": "4.9.0",
-      "dependencies": [
         "meta"
       ]
     },
@@ -729,18 +786,6 @@
       ]
     },
     {
-      "name": "shelf",
-      "version": "1.4.2",
-      "dependencies": [
-        "async",
-        "collection",
-        "http_parser",
-        "path",
-        "stack_trace",
-        "stream_channel"
-      ]
-    },
-    {
       "name": "package_config",
       "version": "2.2.0",
       "dependencies": [
@@ -779,14 +824,6 @@
         "stack_trace",
         "vm_service",
         "yaml"
-      ]
-    },
-    {
-      "name": "boolean_selector",
-      "version": "2.1.2",
-      "dependencies": [
-        "source_span",
-        "string_scanner"
       ]
     },
     {
@@ -837,6 +874,13 @@
       "version": "1.0.0",
       "dependencies": [
         "flutter"
+      ]
+    },
+    {
+      "name": "dispose_scope",
+      "version": "2.1.0",
+      "dependencies": [
+        "meta"
       ]
     },
     {
