@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:todo/todo.dart';
+import 'package:treat_decider/treat_decider.dart';
 
 /// Application router configuration using go_router.
 class AppRouter {
@@ -55,11 +56,66 @@ class AppRouter {
       GoRoute(
         path: AppRoutes.todos,
         name: 'todos',
-        builder: (context, state) => TodoPage(
-          onLogout: () {
-            context.read<AuthBloc>().add(const LogoutRequested());
-          },
+        builder: (context, state) => Scaffold(
+          body: TodoPage(
+            onLogout: () {
+              context.read<AuthBloc>().add(const LogoutRequested());
+            },
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: 0,
+            onTap: (index) {
+              if (index == 1) {
+                context.go(AppRoutes.treatDecider);
+              }
+            },
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.check_circle_outline),
+                label: 'Todos',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.celebration),
+                label: 'Treat Decider',
+              ),
+            ],
+          ),
         ),
+      ),
+      GoRoute(
+        path: AppRoutes.treatDecider,
+        name: 'treatDecider',
+        builder: (context, state) => Scaffold(
+          body: TreatDeciderPage(
+            onNavigateToHistory: () => context.push(AppRoutes.treatDeciderHistory),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: 1,
+            onTap: (index) {
+              if (index == 0) {
+                context.go(AppRoutes.todos);
+              }
+            },
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.check_circle_outline),
+                label: 'Todos',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.celebration),
+                label: 'Treat Decider',
+              ),
+            ],
+          ),
+        ),
+      ),
+      GoRoute(
+        path: AppRoutes.treatDeciderHistory,
+        name: 'treatDeciderHistory',
+        builder: (context, state) {
+          context.read<TreatDeciderBloc>().add(const LoadHistory());
+          return const TreatHistoryPage();
+        },
       ),
     ],
     errorBuilder: (context, state) =>
@@ -70,10 +126,11 @@ class AppRouter {
 /// Application route paths
 class AppRoutes {
   static const String login = '/login';
-
   static const String register = '/register';
   static const String forgotPassword = '/forgot-password';
   static const String todos = '/todos';
+  static const String treatDecider = '/treat-decider';
+  static const String treatDeciderHistory = '/treat-decider/history';
   AppRoutes._();
 }
 

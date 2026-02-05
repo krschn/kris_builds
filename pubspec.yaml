@@ -7,6 +7,7 @@ workspace:
   - packages/auth
   - apps/example_app
   - packages/todo
+  - packages/treat_decider
 
 dev_dependencies:
   melos: ^7.3.0

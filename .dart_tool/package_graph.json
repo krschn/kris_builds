@@ -4,6 +4,7 @@
     "example_app",
     "kris_builds",
     "todo",
+    "treat_decider",
     "widgets"
   ],
   "packages": [
@@ -60,6 +61,7 @@
         "hive",
         "hive_flutter",
         "todo",
+        "treat_decider",
         "widgets"
       ],
       "devDependencies": [
@@ -83,6 +85,25 @@
         "bloc_test",
         "flutter_lints",
         "flutter_test"
+      ]
+    },
+    {
+      "name": "treat_decider",
+      "version": "0.0.0",
+      "dependencies": [
+        "bloc",
+        "equatable",
+        "flutter",
+        "flutter_bloc",
+        "hive",
+        "uuid",
+        "widgets"
+      ],
+      "devDependencies": [
+        "bloc_test",
+        "flutter_lints",
+        "flutter_test",
+        "mocktail"
       ]
     },
     {
@@ -113,6 +134,15 @@
         "xml",
         "yaml",
         "yaml_edit"
+      ]
+    },
+    {
+      "name": "mocktail",
+      "version": "1.0.4",
+      "dependencies": [
+        "collection",
+        "matcher",
+        "test_api"
       ]
     },
     {
@@ -149,6 +179,15 @@
         "stream_channel",
         "test_api",
         "vector_math"
+      ]
+    },
+    {
+      "name": "uuid",
+      "version": "4.5.2",
+      "dependencies": [
+        "crypto",
+        "fixnum",
+        "meta"
       ]
     },
     {
@@ -418,6 +457,32 @@
       "dependencies": []
     },
     {
+      "name": "test_api",
+      "version": "0.7.7",
+      "dependencies": [
+        "async",
+        "boolean_selector",
+        "collection",
+        "meta",
+        "source_span",
+        "stack_trace",
+        "stream_channel",
+        "string_scanner",
+        "term_glyph"
+      ]
+    },
+    {
+      "name": "matcher",
+      "version": "0.12.17",
+      "dependencies": [
+        "async",
+        "meta",
+        "stack_trace",
+        "term_glyph",
+        "test_api"
+      ]
+    },
+    {
       "name": "test",
       "version": "1.26.3",
       "dependencies": [
@@ -447,15 +512,6 @@
         "web_socket_channel",
         "webkit_inspection_protocol",
         "yaml"
-      ]
-    },
-    {
-      "name": "mocktail",
-      "version": "1.0.4",
-      "dependencies": [
-        "collection",
-        "matcher",
-        "test_api"
       ]
     },
     {
@@ -512,30 +568,9 @@
       ]
     },
     {
-      "name": "matcher",
-      "version": "0.12.17",
-      "dependencies": [
-        "async",
-        "meta",
-        "stack_trace",
-        "term_glyph",
-        "test_api"
-      ]
-    },
-    {
-      "name": "test_api",
-      "version": "0.7.7",
-      "dependencies": [
-        "async",
-        "boolean_selector",
-        "collection",
-        "meta",
-        "source_span",
-        "stack_trace",
-        "stream_channel",
-        "string_scanner",
-        "term_glyph"
-      ]
+      "name": "fixnum",
+      "version": "1.1.1",
+      "dependencies": []
     },
     {
       "name": "crypto",
@@ -705,6 +740,11 @@
       ]
     },
     {
+      "name": "term_glyph",
+      "version": "1.2.2",
+      "dependencies": []
+    },
+    {
       "name": "webkit_inspection_protocol",
       "version": "1.2.1",
       "dependencies": [
@@ -863,11 +903,6 @@
         "path",
         "vm_service"
       ]
-    },
-    {
-      "name": "term_glyph",
-      "version": "1.2.2",
-      "dependencies": []
     },
     {
       "name": "nested",
