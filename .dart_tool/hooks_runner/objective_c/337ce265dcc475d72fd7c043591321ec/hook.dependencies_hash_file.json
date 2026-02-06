@@ -1,13 +1,1 @@
-{
-    "file_system": [
-        {
-            "path": "/Users/kris-mac/develop/projects/kris_builds/.dart_tool/package_config.json",
-            "hash": -4092843470421970790
-        },
-        {
-            "path": "/Users/kris-mac/develop/flutter/bin/cache/dart-sdk/version",
-            "hash": -1217844239928142688
-        }
-    ],
-    "environment": []
-}
+{"file_system":[{"path":"/Users/kris-mac/develop/projects/kris_builds/.dart_tool/package_config.json","hash":-4706724788201338062},{"path":"/Users/kris-mac/develop/flutter/bin/cache/dart-sdk/version","hash":2552469652308529245}],"environment":[]}

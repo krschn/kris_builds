@@ -8,6 +8,7 @@ workspace:
   - apps/example_app
   - packages/todo
   - packages/treat_decider
+  - packages/calculator
 
 dev_dependencies:
   melos: ^7.3.0

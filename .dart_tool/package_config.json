@@ -708,6 +708,12 @@
       "rootUri": "../packages/treat_decider",
       "packageUri": "lib/",
       "languageVersion": "3.10"
+    },
+    {
+      "name": "calculator",
+      "rootUri": "../packages/calculator",
+      "packageUri": "lib/",
+      "languageVersion": "3.10"
     }
   ],
   "generator": "pub",

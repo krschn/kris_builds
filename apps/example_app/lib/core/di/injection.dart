@@ -1,4 +1,5 @@
 import 'package:auth/auth.dart';
+import 'package:calculator/calculator.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo/todo.dart';
 import 'package:treat_decider/treat_decider.dart';
@@ -24,6 +25,7 @@ class Injection {
     ),
     BlocProvider<TodoBloc>(create: (_) => instance.createTodoBloc()),
     BlocProvider<TreatDeciderBloc>(create: (_) => instance.createTreatDeciderBloc()),
+    BlocProvider<CalculatorBloc>(create: (_) => instance.createCalculatorBloc()),
   ];
 
   // Auth module
@@ -35,12 +37,16 @@ class Injection {
   // Treat Decider module
   late final TreatDeciderModule _treatDeciderModule;
 
+  // Calculator module
+  late final CalculatorModule _calculatorModule;
+
   Injection._();
 
   // Getters for repositories
   AuthRepository get authRepository => _authModule.repository;
   TodoRepository get todoRepository => _todoModule.repository;
   TreatDeciderRepository get treatDeciderRepository => _treatDeciderModule.repository;
+  CalculatorRepository get calculatorRepository => _calculatorModule.repository;
 
   // Factory methods for blocs
   AuthBloc createAuthBloc() => _authModule.createAuthBloc();
@@ -48,6 +54,8 @@ class Injection {
   TodoBloc createTodoBloc() => _todoModule.createTodoBloc();
 
   TreatDeciderBloc createTreatDeciderBloc() => _treatDeciderModule.createTreatDeciderBloc();
+
+  CalculatorBloc createCalculatorBloc() => _calculatorModule.createCalculatorBloc();
 
   /// Initialize all dependencies
   void init() {
@@ -68,5 +76,8 @@ class Injection {
       HiveService.treatDeciderBox,
     );
     _treatDeciderModule = TreatDeciderModule(dataSource: treatDeciderDataSource);
+
+    // Calculator module (in-memory, no persistence)
+    _calculatorModule = CalculatorModule();
   }
 }

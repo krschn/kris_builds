@@ -1,4 +1,5 @@
 import 'package:auth/auth.dart';
+import 'package:calculator/calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -67,6 +68,8 @@ class AppRouter {
             onTap: (index) {
               if (index == 1) {
                 context.go(AppRoutes.treatDecider);
+              } else if (index == 2) {
+                context.go(AppRoutes.calculator);
               }
             },
             items: const [
@@ -77,6 +80,10 @@ class AppRouter {
               BottomNavigationBarItem(
                 icon: Icon(Icons.celebration),
                 label: 'Treat Decider',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calculate),
+                label: 'Calculator',
               ),
             ],
           ),
@@ -94,6 +101,8 @@ class AppRouter {
             onTap: (index) {
               if (index == 0) {
                 context.go(AppRoutes.todos);
+              } else if (index == 2) {
+                context.go(AppRoutes.calculator);
               }
             },
             items: const [
@@ -104,6 +113,10 @@ class AppRouter {
               BottomNavigationBarItem(
                 icon: Icon(Icons.celebration),
                 label: 'Treat Decider',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calculate),
+                label: 'Calculator',
               ),
             ],
           ),
@@ -116,6 +129,37 @@ class AppRouter {
           context.read<TreatDeciderBloc>().add(const LoadHistory());
           return const TreatHistoryPage();
         },
+      ),
+      GoRoute(
+        path: AppRoutes.calculator,
+        name: 'calculator',
+        builder: (context, state) => Scaffold(
+          body: const CalculatorPage(),
+          bottomNavigationBar: BottomNavigationBar(
+            currentIndex: 2,
+            onTap: (index) {
+              if (index == 0) {
+                context.go(AppRoutes.todos);
+              } else if (index == 1) {
+                context.go(AppRoutes.treatDecider);
+              }
+            },
+            items: const [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.check_circle_outline),
+                label: 'Todos',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.celebration),
+                label: 'Treat Decider',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calculate),
+                label: 'Calculator',
+              ),
+            ],
+          ),
+        ),
       ),
     ],
     errorBuilder: (context, state) =>
@@ -131,6 +175,7 @@ class AppRoutes {
   static const String todos = '/todos';
   static const String treatDecider = '/treat-decider';
   static const String treatDeciderHistory = '/treat-decider/history';
+  static const String calculator = '/calculator';
   AppRoutes._();
 }
 
